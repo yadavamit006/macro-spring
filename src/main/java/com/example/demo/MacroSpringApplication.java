@@ -9,6 +9,7 @@ public class MacroSpringApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MacroSpringApplication.class, args);
 		System.out.println("sdfed");
+		System.out.println("firstStage");
 	}
 
 }
