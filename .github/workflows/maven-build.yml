@@ -5,6 +5,25 @@ name: Java CI with Maven
 
 on:
   workflow_dispatch:
+    inputs:
+      name: 
+        type: choice
+        description: Who to greet
+        options: 
+          - monalisa
+          - cschleiden
+      message:
+          required: true
+      boolean:
+        type: boolean
+        description: True or False
+      use-emoji:
+        type: boolean
+        description: Include 🎉🤣 emojis
+      environment:
+        type: environment
+        description: Select the environment
+      
 
 jobs:
   build:
@@ -21,5 +40,18 @@ jobs:
         java-version: '8'
         distribution: 'temurin'
         cache: maven
+        
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+      
+  greet:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      
+    - name: Send greeting
+      run: |
+        echo "${{ github.event.inputs.message }} ${{ fromJSON('["", "🥳"]')[github.event.inputs.use-emoji == 'true'] }} ${{ github.event.inputs.name }}"
+        echo "boolean is ${{ github.event.inputs.boolean }}"
+        echo "choice is ${{ github.event.inputs.choice }}"
+        echo "environment is ${{ github.event.inputs.environment }}"
