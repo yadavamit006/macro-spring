@@ -13,17 +13,11 @@ on:
           - monalisa
           - cschleiden
       message:
+          type: string
           required: true
       boolean:
         type: boolean
         description: True or False
-      use-emoji:
-        type: boolean
-        description: Include 🎉🤣 emojis
-      environment:
-        type: environment
-        description: Select the environment
-      
 
 jobs:
   build:
@@ -51,7 +45,6 @@ jobs:
       
     - name: Send greeting
       run: |
-        echo "${{ github.event.inputs.message }} ${{ fromJSON('["", "🥳"]')[github.event.inputs.use-emoji == 'true'] }} ${{ github.event.inputs.name }}"
         echo "boolean is ${{ github.event.inputs.boolean }}"
         echo "choice is ${{ github.event.inputs.choice }}"
-        echo "environment is ${{ github.event.inputs.environment }}"
+        echo "Message is ${{ github.event.inputs.message }}"
