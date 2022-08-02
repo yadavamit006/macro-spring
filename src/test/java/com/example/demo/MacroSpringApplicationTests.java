@@ -9,5 +9,7 @@ class MacroSpringApplicationTests {
 	@Test
 	void contextLoads() {
 	}
+	
+	//FEATURE-TEST
 
 }
