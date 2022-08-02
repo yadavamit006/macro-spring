@@ -10,6 +10,10 @@ class MacroSpringApplicationTests {
 	@Test
 	void contextLoads() {
 	}
+
+	
+	//FEATURE-TEST
+
 	//Develop wale ne add kiya
 
 }
