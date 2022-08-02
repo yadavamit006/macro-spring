@@ -11,8 +11,7 @@ public class MacroSpringApplication {
 		System.out.println("sdfed");
 		System.out.println("Backend commit");
 		// Check for comments
+		//Test added comment
 		// Comments by Feature Amdoc
-
 	}
-
 }
