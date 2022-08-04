@@ -10,8 +10,12 @@ public class MacroSpringApplication {
 		SpringApplication.run(MacroSpringApplication.class, args);
 		System.out.println("sdfed");
 		System.out.println("Backend commit");
+		// Check for comments
+		//Test added comment
+		// Comments by Feature Amdoc
+		//Develop has made changes
+		//Kunal Added comit
+		//Added by me
 		//Dev team added comments
-
 	}
-
 }
